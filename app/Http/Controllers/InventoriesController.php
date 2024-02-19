@@ -98,12 +98,12 @@ class InventoriesController extends Controller
     public function search(Request $request)
     {
         $searchQuery = $request->searchQuery;
-        dd($searchQuery);
+        // dd($searchQuery);
         $inventories = Inventories::where('author_user_id', auth()->user()->id)
             ->where('name', 'like', '%' . $searchQuery . '%')
             ->orderByDesc('id')
             ->paginate(9);
-
+        
         return Inertia::render('Homepage', [
             'inventories' => new InventoriesCollection($inventories)
         ]);

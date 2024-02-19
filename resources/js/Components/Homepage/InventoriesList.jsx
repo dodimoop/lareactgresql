@@ -17,10 +17,6 @@ const InventoriesList = ({data}) => {
                   <div className="badge badge-info">Stock: {item?.qty}</div>
                   <div className="badge badge-secondary">Price: {item?.price}</div>
                 </div>
-                <div className="card-actions justify-end">
-                  <div className="badge badge-outline">Fashion</div> 
-                  <div className="badge badge-outline">Products</div>
-                </div>
               </div>
             </div>
           ))}

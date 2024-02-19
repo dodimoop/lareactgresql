@@ -4,7 +4,7 @@ import Navbar from '@/Components/Navbar';
 import { Link, Head } from '@inertiajs/react';
 
 const Homepage = (props) => {
-    const { title, inventories, auth } = props;
+    const { title, inventories, auth, searchQuery } = props;
 
     return (
         <div className='min-h-screen bg-slate-50'>

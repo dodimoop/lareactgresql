@@ -3,20 +3,14 @@ import React, { useState } from 'react'
 import { router } from '@inertiajs/react';
 
 const Navbar = ({isUserLogin}) => {
-
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearchInputChange = (event) => {
     const value = event.target.value
     setSearchQuery(value);
-    if (value?.length > 2) {
-      router.post('inventories/search', {searchQuery: value})
+    if (value?.length > 3) {
+      router.get('inventories/search', {searchQuery: value})
     }
-  };
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    // Di sini Anda dapat memanggil fungsi pencarian jika ingin melakukan pencarian setelah tombol submit ditekan
   };
 
   return (
@@ -26,13 +20,18 @@ const Navbar = ({isUserLogin}) => {
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
-            value={searchQuery}
-            onChange={handleSearchInputChange}
-          />
+          <div className='flex'>
+            <input
+              type="text"
+              placeholder="Search"
+              className="input input-bordered w-24 md:w-auto"
+              value={searchQuery}
+              onChange={handleSearchInputChange}
+            />
+            <div className='px-2 flex justify-center'>
+              <button className="btn btn-outline"><Link href='/' as="button" method='get'>Reset</Link></button>
+            </div>
+          </div>
         </div>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
