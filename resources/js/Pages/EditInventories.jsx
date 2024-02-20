@@ -36,7 +36,7 @@ export default function EditInventories(props) {
             clearErrors()
             reset()
             Inertia.put('/inventories/update', data)
-            router.get('/')
+            router.get('/dashboard')
         }
     };
 
