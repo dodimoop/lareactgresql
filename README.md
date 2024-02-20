@@ -5,4 +5,4 @@ Instalation:
 5. Run on your terminal "npm install" (install node module)
 6. Run on your terminal "npm run dev"
 7. Run on your terminal "php artisan serve"
-8. Open your Google Chrome and paste this url http://localhost:8000/
+8. Open your browser and paste this URL http://localhost:8000/
