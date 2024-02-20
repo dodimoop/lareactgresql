@@ -22,7 +22,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [InventoriesController::class, 'index']);
-Route::get('/inventories/search', [InventoriesController::class, 'search'])->name('inventories.search');
 
 Route::middleware('auth')->group(function () {
     // Profiles
@@ -35,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/inventories/edit', [InventoriesController::class, 'edit'])->name('inventories.edit');
     Route::put('/inventories/update', [InventoriesController::class, 'update'])->name('inventories.update');
     Route::delete('/inventories/delete', [InventoriesController::class, 'destroy'])->name('inventories.delete');
+    Route::get('/inventories/search', [InventoriesController::class, 'search'])->name('inventories.search');
 });
 
 require __DIR__.'/auth.php';

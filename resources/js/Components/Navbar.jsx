@@ -19,20 +19,22 @@ const Navbar = ({isUserLogin}) => {
         <p className="text-bold text-2xl"><Link href={route('dashboard')} as="button">Hi, this is Homepage!</Link></p>
       </div>
       <div className="flex-none gap-2">
-        <div className="form-control">
-          <div className='flex'>
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
-              value={searchQuery}
-              onChange={handleSearchInputChange}
-            />
-            <div className='px-2 flex justify-center'>
-              <button className="btn btn-outline"><Link href='/' as="button" method='get'>Reset</Link></button>
+        {isUserLogin && (
+          <div className="form-control">
+            <div className='flex'>
+              <input
+                type="text"
+                placeholder="Search"
+                className="input input-bordered w-24 md:w-auto"
+                value={searchQuery}
+                onChange={handleSearchInputChange}
+              />
+              <div className='px-2 flex justify-center'>
+                <button className="btn btn-outline"><Link href='/' as="button" method='get'>Reset</Link></button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
